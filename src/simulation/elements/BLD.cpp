@@ -9,7 +9,7 @@ void Element::Element_BLD()
 	Name = "BLD";
 	Colour = PIXPACK(0x990000);
 	MenuVisible = 1;
-	MenuSection = SC_LIQUID;
+	MenuSection = SC_BIOLOGICAL;
 	Enabled = 1;
 
 	Advection = 0.6f;

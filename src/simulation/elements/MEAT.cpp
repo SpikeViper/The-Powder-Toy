@@ -9,7 +9,7 @@ void Element::Element_MEAT()
 	Name = "MEAT";
 	Colour = PIXPACK(0x990022);
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_BIOLOGICAL;
 	Enabled = 1;
 
 	Advection = 0.0f;

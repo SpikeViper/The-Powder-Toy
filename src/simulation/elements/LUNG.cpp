@@ -9,7 +9,7 @@ void Element::Element_LUNG()
 	Name = "LUNG";
 	Colour = PIXPACK(0x990066);
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_BIOLOGICAL;
 	Enabled = 1;
 
 	Advection = 0.0f;
