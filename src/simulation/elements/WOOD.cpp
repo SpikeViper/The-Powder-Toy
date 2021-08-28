@@ -10,7 +10,7 @@ void Element::Element_WOOD()
 	Name = "WOOD";
 	Colour = PIXPACK(0xC0A040);
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_BIOLOGICAL;
 	Enabled = 1;
 
 	Advection = 0.0f;

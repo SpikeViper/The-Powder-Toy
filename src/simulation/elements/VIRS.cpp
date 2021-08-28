@@ -9,7 +9,7 @@ void Element::Element_VIRS()
 	Name = "VIRS";
 	Colour = PIXPACK(0xFE11F6);
 	MenuVisible = 1;
-	MenuSection = SC_LIQUID;
+	MenuSection = SC_BIOLOGICAL;
 	Enabled = 1;
 
 	Advection = 0.6f;

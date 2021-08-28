@@ -9,7 +9,7 @@ void Element::Element_VRSS()
 	Name = "VRSS";
 	Colour = PIXPACK(0xD408CD);
 	MenuVisible = 0;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_BIOLOGICAL;
 	Enabled = 1;
 
 	Advection = 0.0f;

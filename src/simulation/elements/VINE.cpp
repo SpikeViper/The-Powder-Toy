@@ -10,7 +10,7 @@ void Element::Element_VINE()
 	Name = "VINE";
 	Colour = PIXPACK(0x079A00);
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_BIOLOGICAL;
 	Enabled = 1;
 
 	Advection = 0.0f;

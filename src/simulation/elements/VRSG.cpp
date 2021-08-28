@@ -9,7 +9,7 @@ void Element::Element_VRSG()
 	Name = "VRSG";
 	Colour = PIXPACK(0xFE68FE);
 	MenuVisible = 0;
-	MenuSection = SC_GAS;
+	MenuSection = SC_BIOLOGICAL;
 	Enabled = 1;
 
 	Advection = 1.0f;
