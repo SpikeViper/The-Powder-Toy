@@ -48,7 +48,7 @@ void Element::Element_GGOO()
 
 static int update(UPDATE_FUNC_ARGS)
 {
-	int r, rx, ry;
+	short r, rx, ry;
 	for (rx=-1; rx<2; rx++)
 		for (ry=-1; ry<2; ry++)
 			if (BOUNDS_CHECK && (rx || ry))

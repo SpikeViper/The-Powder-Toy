@@ -53,8 +53,9 @@ void Element::Element_MEAT()
 static int update(UPDATE_FUNC_ARGS)
 {
 	int r, rx, ry;
-	int rad = parts[i].tmp;
-	int max_health = parts[i].tmp2;
+	
+	//int rad = parts[i].tmp;
+	//int max_health = parts[i].tmp2;
 
     rx =  RNG::Ref().between(-2, 2);
     ry =  RNG::Ref().between(-2, 2);
@@ -77,7 +78,7 @@ static int update(UPDATE_FUNC_ARGS)
 			if (RNG::Ref().chance(1, 2)){
 				// Diffuse among bio
 				if (sim->elements[TYP(r)].Properties & TYPE_BIO && TYP(r) != PT_BLD){
-					int ir = ID(r);
+					short ir = ID(r);
 
 					if (parts[i].bio.o2 > parts[ir].bio.o2){
 						parts[i].bio.o2--;
@@ -132,14 +133,15 @@ static int update(UPDATE_FUNC_ARGS)
 static int graphics(GRAPHICS_FUNC_ARGS)
 {
     // Oxygen
-    int o = cpart->bio.o2;
+    unsigned char o = cpart->bio.o2;
 
     // C02
-    int c = cpart->bio.co2;
+	//wasn't used, just commented it out just incase
+    //unsigned char c = cpart->bio.co2;
 
-	*colr = (int)fmax(7 * o, 100);
+	*colr = (short)fmax(7 * o, 100);
 	*colg = 0;
-	*colb = (int)fmax(3 * o, 30);
+	*colb = (short)fmax(3 * o, 30);
 	*pixel_mode |= PMODE_BLUR;
 
 	// Life mix

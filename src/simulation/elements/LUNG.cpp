@@ -51,7 +51,7 @@ void Element::Element_LUNG()
 
 static int update(UPDATE_FUNC_ARGS)
 {
-	int r, rx, ry;
+	short r, rx, ry;
 
     rx =  RNG::Ref().between(-2, 2);
     ry =  RNG::Ref().between(-2, 2);
@@ -69,7 +69,7 @@ static int update(UPDATE_FUNC_ARGS)
     if (BOUNDS_CHECK && (rx || ry))
     {
         r = pmap[y+ry][x+rx];
-		int ir = ID(r);
+		short ir = ID(r);
 
         if (r) {
 			// Oxygen collection (more efficient than BLD)
@@ -146,14 +146,14 @@ static int update(UPDATE_FUNC_ARGS)
 static int graphics(GRAPHICS_FUNC_ARGS)
 {
     // Oxygen
-    int o = cpart->bio.o2;
+    unsigned char o = cpart->bio.o2;
 
     // C02
-    int c = cpart->bio.co2;
+    //unsigned char c = cpart->bio.co2;
 	
-	*colr = (int)fmax(7 * o, 100);
+	*colr = (short)fmax(7 * o, 100);
 	*colg = 0;
-	*colb = (int)fmax(7 * o, 60);
+	*colb = (short)fmax(7 * o, 60);
 	*pixel_mode |= PMODE_BLUR;
 
 	*colr = int(*colr * (cpart->bio.health) / 100.0f);

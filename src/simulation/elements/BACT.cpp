@@ -50,10 +50,10 @@ void Element::Element_BACT()
 
 static int update(UPDATE_FUNC_ARGS)
 {
-	int r, rx, ry;
+	short r, rx, ry;
 
-    rx =  RNG::Ref().between(-2, 2);
-    ry =  RNG::Ref().between(-2, 2);
+    rx = RNG::Ref().between(-2, 2);
+    ry = RNG::Ref().between(-2, 2);
 
     // O2 use itself (made very slow for somewhat accuracy)
     if (RNG::Ref().chance(1, 1000)){
@@ -71,8 +71,8 @@ static int update(UPDATE_FUNC_ARGS)
     {
         r = pmap[y+ry][x+rx];
 
-		int t = TYP(r);
-		int ir = ID(r); 
+		short t = TYP(r);
+		short ir = ID(r); 
 
 		if (r){
 			// Steal O2 and offload CO2
@@ -131,8 +131,8 @@ static int update(UPDATE_FUNC_ARGS)
 			&& BOUNDS_CHECK && (rx || ry))
     	{
         	r = pmap[y+ry][x+rx];
-			int t = TYP(r);
-			int ir = ID(r);
+			short t = TYP(r);
+			short ir = ID(r);
 
 			// Empty
 			if (t == 0){
@@ -157,14 +157,14 @@ static int update(UPDATE_FUNC_ARGS)
 static int graphics(GRAPHICS_FUNC_ARGS)
 {
     // Oxygen
-    int o = cpart->bio.o2;
+    short o = cpart->bio.o2;
 
     // C02
-    int c = cpart->bio.co2;
+    short c = cpart->bio.co2;
 
-	int q = cpart->bio.o2;
+	//short q = cpart->bio.o2;
 
-	int d = o - c;
+	short d = o - c;
 
 
 	*colr = (int)fmin(d, 20) * 2;

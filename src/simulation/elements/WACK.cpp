@@ -49,7 +49,7 @@ static int update(UPDATE_FUNC_ARGS)
 {
     if (RNG::Ref().chance(1, 30))
     {
-        int rtype = 0;
+        short rtype = 0;
 
         do {
             rtype = RNG::Ref().between(0, 206);
@@ -58,7 +58,7 @@ static int update(UPDATE_FUNC_ARGS)
         while (rtype == PT_GGOO || rtype == PT_RGOO || rtype == PT_VIRS || rtype == PT_LIFE || 
         rtype == PT_VRSS || rtype == PT_VRSG);
 
-        int np = sim->create_part(-1, x + RNG::Ref().between(-1, 1), y + RNG::Ref().between(-1, 1), rtype);
+        //int np = sim->create_part(-1, x + RNG::Ref().between(-1, 1), y + RNG::Ref().between(-1, 1), rtype);
     }
 	
 	return 0;

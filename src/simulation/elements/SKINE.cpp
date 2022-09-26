@@ -51,7 +51,8 @@ void Element::Element_SKINE()
 
 static int update(UPDATE_FUNC_ARGS)
 {
-int r, nnx, nny, rx, ry;
+	//r, rx, and ry can be short as all values are under 32768, may change to signed char later
+	short r,/* nnx, nny,*/ rx, ry;
 
     // O2 use by skin itself
     if (RNG::Ref().chance(1, 150)){
@@ -73,7 +74,7 @@ int r, nnx, nny, rx, ry;
 			if (RNG::Ref().chance(1, 2)){
 				// Diffuse among bio
 				if (sim->elements[TYP(r)].Properties & TYPE_BIO && TYP(r) != PT_BLD){
-					int ir = ID(r);
+					short ir = ID(r);
 
 					if (parts[i].bio.o2 > parts[ir].bio.o2){
 						parts[i].bio.o2--;
