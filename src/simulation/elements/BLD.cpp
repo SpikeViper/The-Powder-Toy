@@ -50,7 +50,7 @@ void Element::Element_BLD()
 
 static int update(UPDATE_FUNC_ARGS)
 {
-	int r, rx, ry;
+	short r, rx, ry;
 
     rx =  RNG::Ref().between(-2, 2);
     ry =  RNG::Ref().between(-2, 2);
@@ -69,8 +69,8 @@ static int update(UPDATE_FUNC_ARGS)
     {
         r = pmap[y+ry][x+rx];
 
-		int t = TYP(r);
-		int ir = ID(r);
+		short t = TYP(r);
+		short ir = ID(r);
 
         if (r){
 			// Oxygen collection
@@ -141,7 +141,7 @@ static int update(UPDATE_FUNC_ARGS)
 		if (RNG::Ref().chance(1, 100)){
 		// convert biology to tumor (grow)
 			if (sim->elements[TYP(r)].Properties & TYPE_BIO && TYP(r) != PT_TUMOR){
-				int ir = ID(r);
+				short ir = ID(r);
 				sim->part_change_type(ir, parts[ir].x, parts[ir].y, PT_TUMOR);
 			}
 		}
@@ -152,13 +152,13 @@ static int update(UPDATE_FUNC_ARGS)
 
 static int graphics(GRAPHICS_FUNC_ARGS)
 {
+	// o and c can be delcared as short as both bio.o2 and bio.co2 do not go over 32768
     // Oxygen
-    int o = cpart->bio.o2;
+    short o = cpart->bio.o2;
 
     // C02
-    int c = cpart->bio.co2;
+    short c = cpart->bio.co2;
 
-	int q = cpart->bio.o2;
 	*colr = (int)fmax(9 * o, 75);
 	*colg = 0;
 	*colb = 8 * c;

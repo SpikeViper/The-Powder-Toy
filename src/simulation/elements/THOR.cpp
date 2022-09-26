@@ -49,8 +49,8 @@ void Element::Element_THOR()
 
 static int update(UPDATE_FUNC_ARGS)
 {
-	
-	int r, rx, ry, rt;
+	//why was rt even here if unused?, has been commented out
+	short r, rx, ry/*, rt*/;
 	for (rx = -1; rx < 2; rx++) {
 		for (ry = -1; ry < 2; ry++) {
 			if (BOUNDS_CHECK) {

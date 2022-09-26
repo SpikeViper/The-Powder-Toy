@@ -49,14 +49,11 @@ void Element::Element_SKINS()
     Graphics = &graphics;
 }
 
-static int update(UPDATE_FUNC_ARGS)
-{
-
-    int r, nnx, nny, rx, ry;
+static int update(UPDATE_FUNC_ARGS){
+    short r,/* nnx, nny,*/ rx, ry;
 
     // O2 use by skin itself
     if (RNG::Ref().chance(1, 150)){
-
 		if (parts[i].bio.o2 > 0){
         	parts[i].bio.o2 -= 1;
             parts[i].bio.co2 += 1;
@@ -67,14 +64,13 @@ static int update(UPDATE_FUNC_ARGS)
     ry =  RNG::Ref().between(-2, 2);
 
     // Resource diffuse
-    if (BOUNDS_CHECK && (rx || ry))
-    {
+    if (BOUNDS_CHECK && (rx || ry)) {
         r = pmap[y+ry][x+rx];
         if (r) {
 			if (RNG::Ref().chance(1, 2)){
 				// Diffuse among bio
 				if (sim->elements[TYP(r)].Properties & TYPE_BIO && TYP(r) != PT_BLD){
-					int ir = ID(r);
+					short ir = ID(r);
 
 					if (parts[i].bio.o2 > parts[ir].bio.o2){
 						parts[i].bio.o2--;
@@ -93,8 +89,7 @@ static int update(UPDATE_FUNC_ARGS)
     if (parts[i].bio.o2 > 10){
         // Growth check
         
-        if (BOUNDS_CHECK && (rx || ry))
-        {
+        if (BOUNDS_CHECK && (rx || ry)){
             bool f_meat = 0;
 
             for (rx=-2; rx<3; rx++){
@@ -103,7 +98,7 @@ static int update(UPDATE_FUNC_ARGS)
 
 		        for (ry=-2; ry<3; ry++){
 
-                    if (f_meat) break;
+                    if (f_meat) {break;};
 
                     r = pmap[y+ry][x+rx];
                     if (r){   

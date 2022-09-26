@@ -49,7 +49,7 @@ static int update(UPDATE_FUNC_ARGS)
 {
     if (RNG::Ref().chance(1, 30))
     {
-        int rtype = 0;
+        short rtype = 0;
 
         do {
             rtype = RNG::Ref().between(0, 206);
@@ -57,7 +57,7 @@ static int update(UPDATE_FUNC_ARGS)
         }
         while (!(sim->elements[rtype].MenuSection == SC_NUCLEAR));
 
-        int np = sim->create_part(-1, x + RNG::Ref().between(-1, 1), y + RNG::Ref().between(-1, 1), rtype);
+        //int np = sim->create_part(-1, x + RNG::Ref().between(-1, 1), y + RNG::Ref().between(-1, 1), rtype);
     }
 	
 	return 0;

@@ -69,8 +69,8 @@ static int update(UPDATE_FUNC_ARGS)
     {
         r = pmap[y+ry][x+rx];
 
-		int t = TYP(r);
-		int ir = ID(r);
+		short t = TYP(r);
+		short ir = ID(r);
 
         if (r){
 			// Take resources from blood
@@ -151,7 +151,7 @@ static int update(UPDATE_FUNC_ARGS)
 static int graphics(GRAPHICS_FUNC_ARGS)
 {
     // Oxygen
-    int l = cpart->bio.health;
+    short l = cpart->bio.health;
 
 	*colr = (l / 200) * 255;
 	*colg = (l / 200) * 255;

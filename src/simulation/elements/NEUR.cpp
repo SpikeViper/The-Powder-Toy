@@ -52,7 +52,7 @@ void Element::Element_NEUR()
 static int update(UPDATE_FUNC_ARGS)
 {
 
-    int r, nnx, nny, rx, ry;
+    int r,/* nnx, nny,*/ rx, ry;
 
     // O2 use by neuron itself
     if (RNG::Ref().chance(1, 100)){
@@ -74,7 +74,7 @@ static int update(UPDATE_FUNC_ARGS)
 			if (RNG::Ref().chance(1, 2)){
 				// Diffuse among bio
 				if (sim->elements[TYP(r)].Properties & TYPE_BIO && TYP(r) != PT_BLD){
-					int ir = ID(r);
+					short ir = ID(r);
 
 					if (parts[i].bio.o2 > parts[ir].bio.o2){
 						parts[i].bio.o2--;

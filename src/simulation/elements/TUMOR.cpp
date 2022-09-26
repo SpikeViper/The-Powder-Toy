@@ -51,7 +51,7 @@ void Element::Element_TUMOR()
 
 static int update(UPDATE_FUNC_ARGS)
 {
-	int r, rx, ry;
+	short r, rx, ry;
 
     rx =  RNG::Ref().between(-2, 2);
     ry =  RNG::Ref().between(-2, 2);
@@ -73,7 +73,7 @@ static int update(UPDATE_FUNC_ARGS)
 			if (RNG::Ref().chance(1, 2)){
 				// Diffuse among tumor
 				if (TYP(r) == PT_TUMOR){
-					int ir = ID(r);
+					short ir = ID(r);
 
 					if (parts[i].bio.o2 > parts[ir].bio.o2){
 						parts[i].bio.o2--;
@@ -86,7 +86,7 @@ static int update(UPDATE_FUNC_ARGS)
 				}
 				// steal o2 from bio, offload co2 to bio (tumor is greedy)
 				if (sim->elements[TYP(r)].Properties & TYPE_BIO){
-					int ir = ID(r);
+					short ir = ID(r);
 					
 					if (parts[ir].bio.o2 > 1){
 						parts[i].bio.o2++;
@@ -98,7 +98,7 @@ static int update(UPDATE_FUNC_ARGS)
 					}
 				}
 				if (TYP(r) == PT_BLD && RNG::Ref().chance(1, 1000)){
-					int ir = ID(r);
+					short ir = ID(r);
 					parts[ir].ctype = PT_TUMOR;
 				}
 			}
@@ -107,7 +107,7 @@ static int update(UPDATE_FUNC_ARGS)
 	if (RNG::Ref().chance(1, 100)){
 		// convert biology to tumor (grow)
 		if (sim->elements[TYP(r)].Properties & TYPE_BIO && TYP(r) != PT_TUMOR){
-			int ir = ID(r);
+			short ir = ID(r);
 			sim->part_change_type(ir, parts[ir].x, parts[ir].y, PT_TUMOR);
 			parts[i].bio.o2--;
 			parts[i].bio.co2++;
@@ -145,10 +145,10 @@ static int update(UPDATE_FUNC_ARGS)
 static int graphics(GRAPHICS_FUNC_ARGS)
 {
     // Oxygen
-    int o = cpart->bio.o2;
+    short o = cpart->bio.o2;
 
     // C02
-    int c = cpart->bio.co2;
+    //short c = cpart->bio.co2;
 
 	*colr = (int)fmax(3 * o, 77);
 	*colg = (int)fmax(3 * o, 62);

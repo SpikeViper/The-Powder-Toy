@@ -56,7 +56,7 @@ static int update(UPDATE_FUNC_ARGS)
     rx =  RNG::Ref().between(-2, 2);
     ry =  RNG::Ref().between(-2, 2);
 	r = pmap[y+ry][x+rx];
-	int ir = ID(r);
+	short ir = ID(r);
 	if (sim->elements[TYP(r)].Properties & TYPE_BIO){
 		parts[ir].bio.health -= parts[i].tmp;
 		parts[i].life--;
@@ -72,12 +72,12 @@ static int update(UPDATE_FUNC_ARGS)
 static int graphics(GRAPHICS_FUNC_ARGS)
 {
     // Oxygen
-    int o = cpart->tmp;
+    unsigned char o = cpart->tmp;
 
     // C02
-    int c = cpart->bio.co2;
+    //unsigned char c = cpart->bio.co2;
 
-	int q = cpart->bio.o2;
+	//unsigned char q = cpart->bio.o2;
 	*colr = 0;
 	*colg = (int)fmax(9 * o, 75);;
 	*colb = 0;

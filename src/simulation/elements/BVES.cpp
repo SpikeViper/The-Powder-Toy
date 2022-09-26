@@ -394,7 +394,7 @@ int Element_BVES_update(UPDATE_FUNC_ARGS)
 					if (!r)
 					{
 						// BRCK border
-						int index = sim->create_part(-1,x+rx,y+ry,PT_MEAT);
+						//int index = sim->create_part(-1,x+rx,y+ry,PT_MEAT);
 					}
 				}
 			}
@@ -575,7 +575,8 @@ static void transfer_bves_to_bves(Particle *src, Particle *dest, bool STOR)
 
 static void pushParticle(Simulation * sim, int i, int count, int original)
 {
-	int rndstore, rnd, rx, ry, r, x, y, np, q;
+	int rndstore, rnd, x, y, np, q;
+	short rx, ry, r;
 	unsigned int notctype = nextColor(sim->parts[i].tmp);
 	if (!TYP(sim->parts[i].ctype) || count >= 2)//don't push if there is nothing there, max speed of 2 per frame
 		return;
