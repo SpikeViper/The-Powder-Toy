@@ -6,7 +6,7 @@ static int graphics(GRAPHICS_FUNC_ARGS);
 void Element::Element_SACID()
 {
 	Identifier = "DEFAULT_PT_SACID";
-	Name = "SACID";
+	Name = "SACD";
 	Colour = PIXPACK(0x33FF66);
 	MenuVisible = 1;
 	MenuSection = SC_BIO;
