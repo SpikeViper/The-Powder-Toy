@@ -6,7 +6,7 @@ static int graphics(GRAPHICS_FUNC_ARGS);
 void Element::Element_SKIND()
 {
 	Identifier = "DEFAULT_PT_SKIND";
-	Name = "SKIND";
+	Name = "SKND";
 	Colour = PIXPACK(0xE89BBC);
 	MenuVisible = 1;
 	MenuSection = SC_BIO;
