@@ -5,7 +5,7 @@ static int update(UPDATE_FUNC_ARGS);
 void Element::Element_WACKY()
 {
 	Identifier = "DEFAULT_PT_WACKY";
-	Name = "WACKY";
+	Name = "WCKY";
 	Colour = PIXPACK(0xFFD010);
 	MenuVisible = 1;
 	MenuSection = SC_SPECIAL;

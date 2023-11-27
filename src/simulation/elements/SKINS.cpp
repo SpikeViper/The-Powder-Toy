@@ -6,7 +6,7 @@ static int graphics(GRAPHICS_FUNC_ARGS);
 void Element::Element_SKINS()
 {
 	Identifier = "DEFAULT_PT_SKINS";
-	Name = "SKINS";
+	Name = "SKNS";
 	Colour = PIXPACK(0xE0E69A);
 	MenuVisible = 1;
 	MenuSection = SC_BIO;
